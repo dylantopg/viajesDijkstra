@@ -115,7 +115,7 @@ export default defineComponent({
       try {
         this.grafo.addNodo(this.newNode);
         this.newNode = "";
-      } catch (error) {
+      } catch (error: any) {
         alert(error.message);
       }
     },
@@ -123,7 +123,7 @@ export default defineComponent({
       try {
         this.grafo.deleteNodo(this.deleteNodeName);
         this.deleteNodeName = "";
-      } catch (error) {
+      } catch (error: any) {
         alert(error.message);
       }
     },
@@ -133,7 +133,7 @@ export default defineComponent({
         this.node1 = "";
         this.node2 = "";
         this.edgeCost = 0;
-      } catch (error) {
+      } catch (error: any) {
         alert(error.message);
       }
     },
@@ -142,21 +142,21 @@ export default defineComponent({
         this.grafo.deleteArista(this.node1, this.node2);
         this.node1 = "";
         this.node2 = "";
-      } catch (error) {
+      } catch (error: any) {
         alert(error.message);
       }
     },
     checkRoute() {
       try {
         this.routeExists = this.grafo.hayRuta(this.routeNode1, this.routeNode2);
-      } catch (error) {
+      } catch (error: any) {
         alert(error.message);
       }
     },
     getConnectedNodes() {
       try {
         this.connectedNodes = this.grafo.getNodosConectados(this.connectedNode);
-      } catch (error) {
+      } catch (error: any) {
         alert(error.message);
       }
     },
@@ -169,11 +169,10 @@ export default defineComponent({
           this.dijkstraStart,
           this.dijkstraEnd
         );
-      } catch (error) {
+      } catch (error: any) {
         alert(error.message);
       }
     },
   },
 });
 </script>
-
